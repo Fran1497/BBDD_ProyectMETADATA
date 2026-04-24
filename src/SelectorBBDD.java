@@ -26,7 +26,7 @@ public class SelectorBBDD {
             String bd = sc.nextLine();
 
 
-            // conexion
+            // 2.conexion
 
             String urlBD = "jdbc:postgresql://localhost:5432/" + bd;
             Connection conexionBD = DriverManager.getConnection(urlBD, usuario, password);
