@@ -1,8 +1,10 @@
 import java.sql.*;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SelectorBBDD {
-    private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
+    private static final String URL = "jdbc:postgresql://localhost:5432/empresa";
     private static final String usuario = "postgres";
     private static final String password = "root";
 
@@ -37,7 +39,7 @@ public class SelectorBBDD {
             // 3. Listar tablas
 
             String[] tipos = {"TABLE"};
-            ResultSet tablas = metaBD.getTables(null, "public", null, tipos);
+            ResultSet tablas = metaBD.getTables(null, "empresa", null, tipos);
 
             System.out.println("\nTablas en la base de datos " + bd + ":");
             while (tablas.next()) {
@@ -76,7 +78,7 @@ public class SelectorBBDD {
             conexionBD.close();
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            Logger.getLogger(MainJDBCPostgreSQL.class.getName()).log(Level.SEVERE , null, ex);
         }
     }
 }

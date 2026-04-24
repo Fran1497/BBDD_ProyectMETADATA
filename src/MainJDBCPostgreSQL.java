@@ -26,7 +26,7 @@ public class MainJDBCPostgreSQL {
             System.out.println("Usuario: " + usuario);
 
             String[] tipos = {"TABLE"};
-            resul = dbmd.getTables("empresa","public" ,null, tipos);
+            resul = dbmd.getTables("empresa","empresa" ,null, tipos);
 
             while(resul.next()) {
                 String catalogo = resul.getString(1); //columna 1 que
